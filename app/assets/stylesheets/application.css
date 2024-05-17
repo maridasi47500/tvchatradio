@@ -45,3 +45,7 @@ input[type="submit"] {
 							    flex-direction: row;
 							        align-content: center;
 								}
+								main {
+									    display: flex;
+									        align-items: self-start;
+									}
