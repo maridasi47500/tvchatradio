@@ -1,0 +1,47 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+input[type="submit"] {
+	    width: 318px;
+	        height: 42px;
+		    background: orange;
+		        color: white;
+			    border: none;
+			        font-size: 22px;
+			}
+			label.btn.btn-secondary[for=iamf], label.btn.btn-secondary[for=isearchf]   {
+				    --bs-btn-bg: grey;
+				        --bs-btn-active-bg: #97004a;
+				}
+			label.btn.btn-secondary[for=iamm], label.btn.btn-secondary[for=isearchm]   {
+				    --bs-btn-bg: grey;
+				        --bs-btn-active-bg: #191991;
+				}
+				.iam {
+					    display: flex;
+					        padding: 20px;
+						    align-items: stretch;
+						        justify-content: space-around;
+							    flex-direction: row;
+							        align-content: center;
+							}
+							.datefield {
+								    display: flex;
+								        text-align: center;
+						    align-items: stretch;
+						        justify-content: space-around;
+							    flex-direction: row;
+							        align-content: center;
+								}
