@@ -1,5 +1,20 @@
 <h1 class="profile">&#129321;Profile</h1>
           <h4 class="nom"><%=user.nickname%></h4>
+          <span class="profile heart">&#129293;</span>
+          <span class="profile brokenheart">&#128148;</span>
+          <span class="position">&#8982;</span>
+          <span class="abuse">&#9888;</span>
+          <p>
+          <span>  
+          &#9733;</span>
+          <span>  
+          &#9733;</span>
+          <span>  
+          &#9733;</span>
+          <span>  
+          &#9733;</span>
+          </p>
+          <p> my last visit was on <%=user.last_sign_in_at%></p>
 <div class="profilepic">
     <span class="connecte"></span>
       <%=image_tag(asset_path(user.iam == "f" ? "femme" : "homme"), width:100, height:100)%>
@@ -8,8 +23,20 @@
             <span class="age"><%=user.age%> ans</span>
               <a class="chatter" href="/profile/tchatche/<%=user.id%>">Chat &#128488;</a>
                 <p><%=user.iam == "f" ? "Femme" : "Homme"%></p>
+                <p>Message flash</p>
+                <p>le profile de <%=user.nickname%> t'interesse?</p>
+                <p>envoyez votre premier message ci-dessous</p>
+                <p><b>description:</b></p>
+                <p><b>search:</b></p>
+                <p><b>my interests:</b></p>
+                <p><b>sign du zodiac:</b></p>
+                <p><b>zodiac chinois:</b></p>
+                <p><b>celebrites:</b></p>
+                <p><b>my lucky numbers are:</b></p>
+                
                 <div class="field">
                   <select id="">
+                    <option value="">ecrire 1 mesg personel</option>
                     <%["beau profile","jolie photo","on peut tchatter?"].each do |msg|%>
                       <option value="<%=msg%>"><%=msg%></option>
                   <%end%>
@@ -19,11 +46,4 @@
                 <div class="actions">
                   <button type="button" id="btn1">Envoyer 1 message</button>
                 </div>
-                <div class="field">
-                  <textarea id="msgtext">
-                  </textarea>
-                </div>
-                <div class="actions">
-                  <button type="button" id="btn2">ecrire 1 message</button>
-                </div>
-
+kk
