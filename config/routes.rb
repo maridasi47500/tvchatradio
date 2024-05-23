@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'contacts/index'
+  get 'settings/profile'
+  get 'settings/research'
+  get 'settings/album'
+  get 'settings/interests'
+  get 'settings/account'
   get 'conversations/index'
   get 'localize/index'
   get 'profile/tchatche/:id', to: "tchatche#chat"

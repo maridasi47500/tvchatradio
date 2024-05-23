@@ -6,6 +6,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.1]
       ## Database authenticatable
       t.string :iam
       t.string :isearch
+      t.string :image
       t.string :birthdate
       t.string :phone
       t.string :nickname

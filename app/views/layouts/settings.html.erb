@@ -21,23 +21,22 @@
                                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                                     <li class="nav-item">
-                                                                <a class="nav-link active" aria-current="page" href="/search/index">&#128269;</a>
+                                                                <a class="nav-link" aria-current="page" href="/search/index">&#128269;</a>
                                                                         </li>
                                                     <li class="nav-item">
-                                                                <a class="nav-link active" aria-current="page" href="/localize/index">&#8982;</a>
+                                                                <a class="nav-link" aria-current="page" href="/localize/index">&#8982;</a>
                                                                         </li>
                                                     <li class="nav-item">
-                                                      <a class="nav-link active" aria-current="page" href="/conversations/index">  
+                                                      <a class="nav-link" aria-current="page" href="/conversations/index">  
                                                         &#128488;</a>
                                                                         </li>
 
                                                     <li class="nav-item">
-                                                      <a class="nav-link active" aria-current="page" href="/contacts/index">&#10084;
+                                                      <a class="nav-link" href="/contacts/index">&#10084;
                                                       </a>
                                                                         </li>
                                                     <li class="nav-item">
-                                                      <a class="nav-link active" aria-current="page" href="/settings/profile">&#9881;
-
+                                                      <a class="nav-link" href="/settings/profile">&#9881;
                                                       </a>
                                                                         </li>
 
@@ -93,6 +92,39 @@
                                                                     </div>
                                                                       </div>
                                                                         <div id="mydiv2">
+                                                                          <h1>Settings </h1>
+                                                                          <%=%>
+                                                                          <div class="settingnav">
+                                                                            <%=
+                                                                              link_to_unless_current("<span>&#9977;</span>Mon profile".html_safe, { controller: "settings", action: "profile" }) do
+                                                                                         link_to("<span>&#9977;</span>Mon profile".html_safe, { controller: "settings", action: "profile" }, class: "current")
+                                                                                             end
+                                                                                              %>
+                                                                            <%=
+                                                                              link_to_unless_current("<span>  
+                                                                                                     &#128105; / &#129492;</span>Ma Recherche".html_safe, { controller: "settings", action: "research" }) do
+                                                                                         link_to("<span>  
+                                                                                                     &#128105; / &#129492;</span>Ma Recherche".html_safe, { controller: "settings", action: "research" }, class: "current")
+                                                                                             end
+                                                                                              %>
+                                                                            <%=
+                                                                              link_to_unless_current("<span>  
+                                                                                                     &#128444;</span>Mes albums".html_safe, { controller: "settings", action: "album" }) do
+                                                                                         link_to("<span>  
+                                                                                                     &#128444;</span>Mes albums".html_safe, { controller: "settings", action: "album" }, class: "current")
+                                                                                             end
+                                                                                              %>
+                                                                            <%=
+                                                                              link_to_unless_current("<span>&#127926;</span>Mes intérêts".html_safe, { controller: "settings", action: "interests" }) do
+                                                                                         link_to("<span>&#127926;</span>Mes intérêts".html_safe, { controller: "settings", action: "interests" }, class: "current")
+                                                                                             end
+                                                                                              %>
+                                                                            <%=
+                                                                              link_to_unless_current("<span>&#9881;</span>Mon compte".html_safe, { controller: "settings", action: "account" }) do
+                                                                                         link_to("<span>&#9881;</span>Mon compte".html_safe, { controller: "settings", action: "account" }, class: "current")
+                                                                                             end
+                                                                                              %>
+                                                                          </div>
     <%= yield %>
                                                                             </div>
     </main>

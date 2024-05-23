@@ -112,3 +112,23 @@ input[type="submit"] {
 																				    margin-right: 15px;
 																			    }
 																			    #map { height: 180px;width:540px; }
+																			    .settingnav a, .settingnav a:link, .settingnav a:visited, .settingnav a:active {
+																				        border: orange 1px solid;
+																					    float: left;
+																					        height: 100px;
+																						    text-align: center;
+																						        align-items: normal;
+																							    display: flex;
+																							        align-content: stretch;
+																								    flex-wrap: wrap;
+																								        flex-direction: column;
+																									    justify-content: center;
+																									        width: 106px;
+																										    padding: 9px;
+																										        text-decoration: none;
+																											    color: black;
+																										    }
+																										    .settingnav a.current {
+																											        background: orange;
+																												    color: white;
+																											    }
