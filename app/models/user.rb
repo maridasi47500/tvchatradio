@@ -16,4 +16,10 @@ class User < ApplicationRecord
   before_validation do
     self.birthdate=Date.new(self.yyyy,self.mm,self.dd)
   end
+  def age
+    (Date.today.to_time.to_i - self.birthdate.to_time.to_i).to_i/365
+  end
+  def list_tchatche
+    User.all.where.not(id: self.id)
+  end
 end

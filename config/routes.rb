@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  get 'tchatche/profile'
+  get 'tchatche/chat'
   resources :posts
+  get 'tchatche/:id', to: 'tchatche#profile'
   get 'search/index'
   get 'welcome/index'
   devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions' }

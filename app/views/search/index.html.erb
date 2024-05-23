@@ -1,6 +1,7 @@
 <main>
   <div id="users">
     <div class="myusers">
+      <%= render partial: "search/user", collection: @users, as: :user %>
     </div>
     <div class="button">
     <div class="nbusers">
@@ -12,5 +13,63 @@
     </div>
   </div>
   <div id="mydiv2">
+    <form>
+      <div class="field">
+        <p>j cherche</p>
+        <input type="checkbox" id="swoman" name="jecherche" value="f"/>
+
+        <label for="swoman">women</label>
+        <input type="checkbox" id="sman" value="m" name="jecherche"/>
+        <label for ="sman">men</label>
+      </div>
+      <div class="range">
+           <div class="range-slider">
+                  <span class="range-selected"></span>
+                     </div>
+                        <div class="range-input">
+                               <input type="range" class="min" min="0" max="1000" value="300" step="10">
+                                    <input type="range" class="max" min="0" max="1000" value="700" step="10">
+                                       </div>
+                                          <div class="range-price">      
+                                                 <label for="min">Min</label>
+                                                      <input type="number" name="min" value="300">      
+                                                           <label for="max">Max</label>
+                                                                <input type="number" name="max" value="700">      
+                                                                   </div>
+                                                                    </div> 
+      <div class="field">
+        <p>avec</p>
+        <input type="checkbox" id="profilepic" name="profilestuff" value="pic"/>
+
+        <label for="profilepic">photo de profile</label>
+        <input type="checkbox" id="profilealbum" name="profilestuff" value="album"/>
+        <label for ="profilealbum">album</label>
+      </div>
+      <div class="field">
+
+
+        <label for="pays">pays</label>
+        <select id="pays" name="pays">
+          <option value="">-</option>
+        </select>
+      </div>
+      <div class="field">
+
+
+        <label for="nickname"> son nickname</label>
+        <input type="text" id="nickname" name="nickname">
+      </div>
+      <div class="field">
+        <p>type de rencontre</p>
+        <%["ami","fun","sérieux"].each do |x|%>
+          <input type="checkbox" id="type<%=x.parameterize%>" name="type" value="<%=x.parameterize%>"/>
+
+          <label for="type<%=x.parameterize%>"><%=x%></label>
+      <%end%>
+      </div>
+      <div class="field">
+          <input type="suhmit" id="chercherbtn" name="chercher" value="chercher"/>
+      </div>
+    </form>
   </div>
 </main>
