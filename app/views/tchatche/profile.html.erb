@@ -1,2 +1,29 @@
 <h1 class="profile">&#129321;Profile</h1>
-<p>Find me in app/views/tchatche/profile.html.erb</p>
+          <h4 class="nom"><%=user.nickname%></h4>
+<div class="profilepic">
+    <span class="connecte"></span>
+      <%=image_tag(asset_path(user.iam == "f" ? "femme" : "homme"), width:100, height:100)%>
+        </div>
+
+            <span class="age"><%=user.age%> ans</span>
+              <a class="chatter" href="/profile/tchatche/<%=user.id%>">Chat &#128488;</a>
+                <p><%=user.iam == "f" ? "Femme" : "Homme"%></p>
+                <div class="field">
+                  <select id="">
+                    <%["beau profile","jolie photo","on peut tchatter?"].each do |msg|%>
+                      <option value="<%=msg%>"><%=msg%></option>
+                  <%end%>
+
+                  </select>
+                </div>
+                <div class="actions">
+                  <button type="button" id="btn1">Envoyer 1 message</button>
+                </div>
+                <div class="field">
+                  <textarea id="msgtext">
+                  </textarea>
+                </div>
+                <div class="actions">
+                  <button type="button" id="btn2">ecrire 1 message</button>
+                </div>
+

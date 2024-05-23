@@ -59,12 +59,14 @@
         <label for="nickname"> son nickname</label>
         <input type="text" id="nickname" name="nickname">
       </div>
-      <div class="field">
+      <div class="field ">
         <p>type de rencontre</p>
         <%["ami","fun","sérieux"].each do |x|%>
-          <input type="checkbox" id="type<%=x.parameterize%>" name="type" value="<%=x.parameterize%>"/>
+      <div class=" form-check form-switch form-check-reverse">
+          <input class="form-check-input" type="checkbox" id="type<%=x.parameterize%>" name="type" value="<%=x.parameterize%>"/>
 
-          <label for="type<%=x.parameterize%>"><%=x%></label>
+          <label class="form-check-label" for="type<%=x.parameterize%>"><%=x%></label>
+      </div>
       <%end%>
       </div>
       <div class="field">

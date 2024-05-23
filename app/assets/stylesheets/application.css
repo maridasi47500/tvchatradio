@@ -111,3 +111,4 @@ input[type="submit"] {
 																			  .range-price input:first-of-type {
 																				    margin-right: 15px;
 																			    }
+																			    #map { height: 180px;width:540px; }

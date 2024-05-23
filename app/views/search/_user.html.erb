@@ -1,11 +1,11 @@
-<div class="user">
+<div class="user"><a class="chatter" href="/tchatche/<%=user.id%>">
   <div class="profilepic">
   <span class="connecte"></span>
   <%=image_tag(asset_path(user.iam == "f" ? "femme" : "homme"), width:100, height:100)%>
   </div>
   <span class="nom"><%=user.nickname%></span>
   <span class="age"><%=user.age%> ans</span>
-  <a class="chatter" href="/tchatche/<%=user.id%>">&#128488;</a>
-  <p><%=user.iam == "f" ? "Femme" : "Homme"%></p>
+  &#128081;
+  <p><%=user.iam == "f" ? "Femme" : "Homme"%></p></a>
 
 </div>
