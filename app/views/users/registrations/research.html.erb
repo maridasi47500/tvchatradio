@@ -1,0 +1,24 @@
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
+
+  <div class="">
+    <p>Je cherche une relation avec</p>
+      <div class="field">
+
+            <%= f.check_box :isearchwoman,autofocus: true, class:"",id:"isearchf", autocomplete: "off",checked:true %>
+                <%= f.label :isearchwoman,"une femme",class:"",for:"isearchf" %><br />
+                  </div>
+                    <div class="field">
+
+                          <%= f.check_box :isearchman, autofocus: true, class:"",id:"isearchm", autocomplete: "off"%>
+                              <%= f.label :isearchman,"un homme",class:"",for:"isearchm" %><br />
+                                </div>
+                                  </div>
+
+
+  <div class="actions">
+    <%= f.submit "Continuer" %>
+  </div>
+<% end %>
+

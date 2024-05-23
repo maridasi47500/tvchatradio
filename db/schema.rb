@@ -28,7 +28,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_17_112501) do
 
   create_table "users", force: :cascade do |t|
     t.string "iam"
-    t.string "isearch"
+    t.integer "isearchman"
+    t.integer "isearchwoman"
+    t.string "image"
     t.string "birthdate"
     t.string "phone"
     t.string "nickname"

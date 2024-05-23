@@ -17,13 +17,13 @@
   <div class="iam">
   <div class="field">
 
-    <%= f.radio_button :isearch,"f", autofocus: true, class:"btn-check",id:"isearchf", autocomplete: "off",checked:true %>
-    <%= f.label :isearch,"femme",class:"btn btn-secondary",for:"isearchf" %><br />
+    <%= f.check_box :isearchwoman,autofocus: true, class:"btn-check",id:"isearchf", autocomplete: "off" %>
+    <%= f.label :isearchwoman,"femme",class:"btn btn-secondary",for:"isearchf" %><br />
   </div>
   <div class="field">
 
-    <%= f.radio_button :isearch, "m",autofocus: true, class:"btn-check",id:"isearchm", autocomplete: "off"%>
-    <%= f.label :isearch,"homme",class:"btn btn-secondary",for:"isearchm" %><br />
+    <%= f.check_box :isearchman, autofocus: true, class:"btn-check",id:"isearchm", autocomplete: "off"%>
+    <%= f.label :isearchman,"homme",class:"btn btn-secondary",for:"isearchm" %><br />
   </div>
   </div>
   <div class="datefield">

@@ -5,8 +5,15 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.1]
     create_table :users do |t|
       ## Database authenticatable
       t.string :iam
-      t.string :isearch
+      t.integer :isearchman
+      t.integer :isearchwoman
+      t.integer :showweightsize
       t.string :image
+      t.text :description
+      t.string :size
+      t.string :country
+      t.string :region_id
+      t.string :weight
       t.string :birthdate
       t.string :phone
       t.string :nickname
