@@ -10,7 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_17_112501) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_24_121855) do
+  create_table "interests", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "photoprives", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "photopublics", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
     t.text "content"
@@ -26,11 +46,24 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_17_112501) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "userhaveinterests", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "interest_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "iam"
     t.integer "isearchman"
     t.integer "isearchwoman"
+    t.integer "showweightsize"
     t.string "image"
+    t.text "description"
+    t.string "size"
+    t.string "country"
+    t.string "region_id"
+    t.string "weight"
     t.string "birthdate"
     t.string "phone"
     t.string "nickname"

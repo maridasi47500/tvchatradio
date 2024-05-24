@@ -1,0 +1,19 @@
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put,id:"formalbumpublic" }) do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
+  <div class="champ">
+    <%=f.file_field :ajouterpublic,style: "display:none;",onchange:"formalbumpublic.submit()"%>
+    <a id="ajouteralbumpublic" onclick="user_ajouterpublic.click()">+ Ajouter</a>
+  </div>
+  <div class="champ">
+  <%=f.fields_for :photopublics do |b|%>
+    <div class="myitem">
+    <img src="/uploads/<%=b.object.image%>" width=100 height=100 />
+    Delete: <%= b.check_box :_destroy,id:"destroyphotopublic#{b.object.id}",style:"display:none;" %>
+  <span onclick="destroyphotopublic<%=b.object.id%>.checked=true;formalbumpublic.submit();">supprimer x</span>
+    </div>
+  <%end%>
+  </div>
+
+
+<% end %>

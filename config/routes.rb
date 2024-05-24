@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :interests
+  resources :photopublics
+  resources :photoprives
   get 'contacts/index'
   get 'settings/profile'
   get 'settings/research'

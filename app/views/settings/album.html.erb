@@ -1,12 +1,15 @@
 <h2>Album public <span onclick="overlay.style.display='block';">&#128712;</span></h2>
+<%=render template:"users/registrations/albumpublic",locals:{resource_name: :user,resource: current_user}%>
 
 <h2>Album privé <span onclick="overlay1.style.display='block';">&#128712;</span></h2>
+<%=render template:"users/registrations/albumprive",locals:{resource_name: :user,resource: current_user}%>
+<%=content_for :somehtml do%>
 <div id="overlay">
 <div id="text">
   <h3>album public</h3>
   <u>qui peut le voir?</u>
   <p>tout le monde</p>
-  <p class="ok">OK</p>
+  <p class="ok" onclick="overlay.style.display='none';">OK</p>
 </div>
 </div>
 <div id="overlay1">
@@ -16,6 +19,7 @@
   <p>seulement toi</p>
   <u>comment partager un album privé?</u>
   <p>sur la page de chat, cliquer sur partager une image et sélectionne l'image à envoyer</p>
-  <p class="ok">OK</p>
+  <p class="ok" onclick="overlay1.style.display='none';">OK</p>
 </div>
 </div>
+<%end%>

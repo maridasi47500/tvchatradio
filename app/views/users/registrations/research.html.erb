@@ -2,11 +2,12 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
 
+  <%= f.hidden_field :research,value:"1"%>
   <div class="">
     <p>Je cherche une relation avec</p>
       <div class="field">
 
-            <%= f.check_box :isearchwoman,autofocus: true, class:"",id:"isearchf", autocomplete: "off",checked:true %>
+            <%= f.check_box :isearchwoman,autofocus: true, class:"",id:"isearchf", autocomplete: "off" %>
                 <%= f.label :isearchwoman,"une femme",class:"",for:"isearchf" %><br />
                   </div>
                     <div class="field">

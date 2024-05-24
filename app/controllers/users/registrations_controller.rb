@@ -37,23 +37,43 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def cancel
   #   super
   # end
+  def update_resource(resource, params)
+               resource.update_without_password(params.except(:current_password))
+          end
 
   protected
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:email,:iam, :isearchwoman,:isearchman,:yyyy,:mm,:dd,:phone,:nickname,:region])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:account,:showweightsize,:research,:myinterests,:description,:weight,:size,:country,:region_id,:email,:iam, :isearchwoman,:isearchman,:yyyy,:mm,:dd,:phone,:nickname,:ajouterprive,:ajouterpublic,:region,:interest_ids=>[],:photopublics_attributes=>{},:photoprives_attributes=>{}])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:email,:iam, :isearchwoman,:isearchman,:mm,:dd,:yyyy,:phone,:nickname,:region])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:account,:showweightsize,:research,:myinterests,:description,:weight,:size,:country,:region_id,:email,:iam, :isearchwoman,:isearchman,:mm,:dd,:yyyy,:phone,:nickname,:region,:ajouterprive,:ajouterpublic,:interest_ids=>[],:photopublics_attributes=>{},:photoprives_attributes=>{}])
   end
 
-  # The path used after sign up.
-  # def after_sign_up_path_for(resource)
+  #The path used after sign up.
+  #def after_sign_up_path_for(resource)
   #   super(resource)
-  # end
+  #end
+
+          def after_update_path_for(resource)
+                    puts 'this is happening yoyo mama'
+                            flash[:notice] = "You send photos"
+                            if resource.ajouterprive or resource.ajouterpublic or resource.photopublic or resource.photoprive 
+                              "/settings/album"
+                            elsif resource.account
+                              "/settings/account"
+                            elsif resource.myinterests
+                              "/settings/interests"
+                            elsif resource.research
+                              "/settings/research"
+                            else
+                              "/settings/profile"
+                            end
+                                        end
+
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)

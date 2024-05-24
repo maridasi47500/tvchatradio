@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @photoprife %>
+
+<div>
+  <%= link_to "Edit this photoprive", edit_photoprife_path(@photoprife) %> |
+  <%= link_to "Back to photoprives", photoprives_path %>
+
+  <%= button_to "Destroy this photoprive", @photoprife, method: :delete %>
+</div>

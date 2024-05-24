@@ -1,0 +1,2 @@
+class Photopublic < ApplicationRecord
+end

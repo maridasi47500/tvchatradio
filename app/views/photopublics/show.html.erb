@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @photopublic %>
+
+<div>
+  <%= link_to "Edit this photopublic", edit_photopublic_path(@photopublic) %> |
+  <%= link_to "Back to photopublics", photopublics_path %>
+
+  <%= button_to "Destroy this photopublic", @photopublic, method: :delete %>
+</div>

@@ -3,7 +3,38 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :trackable
-  attr_accessor :yyyy,:mm,:dd
+  attr_accessor :yyyy,:mm,:dd, :ajouterprive,:ajouterpublic,:photopublic,:photoprive,:research, :myinterests, :account
+  has_and_belongs_to_many :interests, :join_table => :userhaveinterests
+  has_many :photoprives, class_name:"Photoprive"
+  accepts_nested_attributes_for :photoprives, allow_destroy:true
+  def mybirthdate
+    birthdate.to_date
+  end
+  
+  has_many :photopublics
+  accepts_nested_attributes_for :photopublics, allow_destroy:true
+  before_validation do
+    uploaded_io = self.ajouterpublic
+    if uploaded_io
+      File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
+          file.write(uploaded_io.read)
+      end
+      self.photopublics.create(image: uploaded_io.original_filename)
+      self.photopublic=true
+
+
+    end
+    uploaded_io = self.ajouterprive
+    if uploaded_io
+      File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
+          file.write(uploaded_io.read)
+      end
+      self.photoprives.create(image: uploaded_io.original_filename)
+      self.photoprive=true
+
+
+    end
+  end
   
   def initialize(attributes = {})
         super
@@ -14,7 +45,9 @@ class User < ApplicationRecord
         self.dd=x.day
               end
   before_validation do
-    self.birthdate=Date.new(self.yyyy,self.mm,self.dd)
+    if self.yyyy and self.mm and self.dd
+      self.birthdate=Date.new(self.yyyy.to_i,self.mm.to_i,self.dd.to_i)
+    end
   end
   def age
     (Date.today.to_time.to_i - self.birthdate.to_time.to_i).to_i/(365*24*3600)

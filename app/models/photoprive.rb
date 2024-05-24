@@ -1,0 +1,2 @@
+class Photoprive < ApplicationRecord
+end

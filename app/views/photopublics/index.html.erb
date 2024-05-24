@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Photopublics</h1>
+
+<div id="photopublics">
+  <% @photopublics.each do |photopublic| %>
+    <%= render photopublic %>
+    <p>
+      <%= link_to "Show this photopublic", photopublic %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New photopublic", new_photopublic_path %>
