@@ -1,0 +1,10 @@
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put,id:"formphotoprofile" }) do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
+  <div class="champ">
+    <%=f.file_field :image, id: "user_ajouterphotoprofile",style: "display:none;",onchange:"formphotoprofile.submit()"%>
+    <a onclick="user_ajouterphotoprofile.click()">Modifier</a>
+  </div>
+
+
+<% end %>

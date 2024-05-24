@@ -94,9 +94,8 @@
                                                                         <div id="mydiv2">
                                                                           <h1>Settings </h1>
                                                                           <%=image_tag((current_user.image ? "/uploads/#{current_user.image}" : asset_path(current_user.iam == "f" ? "femme" : "homme")), width:100, height:100)%>
-                                                                          <%=file_field_tag :modifier, style:"display:none;"%>
                                                                           <p><%=current_user.nickname%></p>
-                                                                          <a class="modifierpic">Modifier</a>
+                                                                          <%=render template:"users/registrations/photoprofile",locals:{resource_name: :user,resource: current_user}%>
                                                                           <div class="settingnav">
                                                                             <%=
                                                                               link_to_unless_current("<span>&#9977;</span>Mon profile".html_safe, { controller: "settings", action: "profile" }) do

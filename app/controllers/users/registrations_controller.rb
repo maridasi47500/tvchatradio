@@ -45,12 +45,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:account,:showweightsize,:research,:myinterests,:description,:weight,:size,:country,:region_id,:email,:iam, :isearchwoman,:isearchman,:yyyy,:mm,:dd,:phone,:nickname,:ajouterprive,:ajouterpublic,:region,:interest_ids=>[],:photopublics_attributes=>{},:photoprives_attributes=>{}])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:image,:account,:showweightsize,:research,:myinterests,:description,:weight,:size,:country,:region_id,:email,:iam, :isearchwoman,:isearchman,:yyyy,:mm,:dd,:phone,:nickname,:ajouterprive,:ajouterpublic,:region,:interest_ids=>[],:photopublics_attributes=>{},:photoprives_attributes=>{}])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:account,:showweightsize,:research,:myinterests,:description,:weight,:size,:country,:region_id,:email,:iam, :isearchwoman,:isearchman,:mm,:dd,:yyyy,:phone,:nickname,:region,:ajouterprive,:ajouterpublic,:interest_ids=>[],:photopublics_attributes=>{},:photoprives_attributes=>{}])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:image,:account,:showweightsize,:research,:myinterests,:description,:weight,:size,:country,:region_id,:email,:iam, :isearchwoman,:isearchman,:mm,:dd,:yyyy,:phone,:nickname,:region,:ajouterprive,:ajouterpublic,:interest_ids=>[],:photopublics_attributes=>{},:photoprives_attributes=>{}])
   end
 
   #The path used after sign up.
