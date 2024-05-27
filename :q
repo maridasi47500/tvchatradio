@@ -12,7 +12,7 @@ class TchatcheController < ApplicationController
     @room=User.find(mycurrentuserid).search_room(@user.id)
 
     content=params[:content]
-    @message=Message.create(user_id:mycurrentuserid,room_id:@room.id,content:content)
+    @message=Messge.create(user_id:mycurrentuserid,room_id:@room.id,content:content)
   end
 
   def chat

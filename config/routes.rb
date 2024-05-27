@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'conversations/index'
   get 'localize/index'
   get 'profile/tchatche/:id', to: "tchatche#chat"
+  post 'tchatche/message'
   get 'tchatche/chat'
   resources :posts
   get 'tchatche/:id', to: 'tchatche#profile'

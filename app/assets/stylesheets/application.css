@@ -13,6 +13,13 @@
  *= require_tree .
  *= require_self
  */
+.options, .someuser, .someinfo {
+	    display: flex;
+	        align-items: baseline;
+		    vertical-align: middle;
+		        line-height: 100px;
+			    height: 100px;
+		    }
 input[type="submit"] {
 	    width: 318px;
 	        height: 42px;

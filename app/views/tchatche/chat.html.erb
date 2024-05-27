@@ -1,5 +1,47 @@
-<h1>Tchatche#chat</h1>
-<div class="messages"></div>
+<div class="someuser">
+      <div class="someinfo">
+      <div class="profilepic">
+          <span class="connecte"></span>
+            <%=image_tag(asset_path(user.iam == "f" ? "femme" : "homme"), width:100, height:100)%>
+              </div>
+
+                <span class="nom"><%=user.nickname%></span>
+                  <span class="age"><%=user.age%> ans</span>
+
+                      <p><%=user.country%></p>
+                      <p><%=user.region_id%></p>
+</div>
+      <div class="options">
+        <div class="profile_action">
+          <span>
+            &#128526;
+
+          </span>
+          Profile
+        </div>
+        <div class="contacts_action">
+            
+          <span>&#128420;
+          </span>
+          Contacts
+        </div>
+        <div class="blacklist_action">
+          <span>&#128148;
+          </span>
+          Blacklist
+        </div>
+
+</div>
+</div>
+<div id="tchatcheid" hidden><%=user.id%></div>
+<div class="messages">
+  <div class="talk-bubble tri-right myborder btm-right-in">
+      <div class="talktext">
+            <p>Now flipped the other way and square. Uses .border and .btm-right-in</p>
+              </div>
+  </div>
+</div>
+<form id="formsendmsg">
                 <div class="field">
                                     <textarea id="msgtext">
                                                         </textarea>
@@ -7,4 +49,5 @@
                                                                                         <div class="actions">
                                                                                                             <button type="button" id="btn2">ecrire 1 message</button>
                                                                                                                             </div>
+                                                                                                                            </form>
 
