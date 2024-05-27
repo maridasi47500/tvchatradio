@@ -21,6 +21,7 @@ form#formsendmsg {
 			}
 .tri-right.btm-left-in {
 	float:left;
+	clear:both;
 }
 .tri-right.btm-left-in:after {
 	    content: ' ';
@@ -77,6 +78,7 @@ form#formsendmsg {
 				    }
 .tri-right.btm-right-in {
 	float:right;
+	clear:both;
 }
 .tri-right.btm-right-in:after {
 

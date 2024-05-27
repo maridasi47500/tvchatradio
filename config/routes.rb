@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   get 'conversations/index'
   get 'localize/index'
   get 'profile/tchatche/:id', to: "tchatche#chat"
-  post 'tchatche/message'
+  post 'tchatche/message', to: "tchatche#message"
+  mount ActionCable.server => "/websocket" 
+
   get 'tchatche/chat'
   resources :posts
   get 'tchatche/:id', to: 'tchatche#profile'

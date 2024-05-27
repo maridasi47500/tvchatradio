@@ -1,11 +1,10 @@
 development:
-  adapter: redis
-  url: redis://localhost:6379/1
+    adapter: async
 
-test:
-  adapter: test
+    test:
+        adapter: test
 
-production:
-  adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
-  channel_prefix: tvchatradio_production
+    production:
+        adapter: redis
+        url: redis://10.10.3.153:6381
+        channel_prefix: appname_production

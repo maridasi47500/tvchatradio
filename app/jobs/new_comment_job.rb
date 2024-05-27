@@ -1,9 +1,10 @@
 class NewCommentJob < ApplicationJob
   queue_as :default
 
-  def perform(room,post)
+  def perform(room,message,userid,content)
     # Do something later
-    PostsChannel.broadcast_to(room, post)
+    ActionCable.server.broadcast("chat_#{room.id}", { postid: message.id,userid:userid,body: content})
   end
 
 end
+
