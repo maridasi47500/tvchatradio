@@ -17,15 +17,22 @@ consumer.subscriptions.create({ channel: "ProfileChannel", user1: document.query
 		  console.log("LOL");
 		      const html = this.createLine(data)
 
+
 		      const element = document.querySelector(".profile.heart")
 		      element.innerHTML = html;
+
 		    },
 
 	  createLine(data) {
 		  if (data.ilike){
 		      return `&#129505;`
 		  }else{
+		  var wow=document.querySelector("#seeprofilelike"+data.user2);
+                      if (wow){
+			      wow.remove();
+		      }
 		      return `&#129293;`
+
 		  }
 		    }
 })

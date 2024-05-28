@@ -15,7 +15,7 @@ class TchatcheController < ApplicationController
     if @like
       @like.destroy
     end
-    NewProfileFavJob.perform_later(params[:user1],params[:user2],false)
+    DislikeJob.perform_later(params[:user2])
 
   end
   def show

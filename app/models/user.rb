@@ -1,10 +1,12 @@
 class User < ApplicationRecord
   paginates_per 10
+  has_many :somefavusers, class_name:"Ilike", foreign_key:"user1_id"
+  has_many :favusers, through: :somefavusers, source: :user2
   def online?
       updated_at > 10.minutes.ago
   end
   def self.onlineusers
-    select("users.*, cast(users.updated_at > #{10.minutes.ago.strftime("%Y-%M-%d %H:%m:%S")} as integer) sometime").order("sometime desc")
+    select("users.*, cast(users.updated_at > '#{10.minutes.ago.strftime("%Y-%M-%d %H:%m:%S")}' as integer) sometime").group("users.id").order("sometime desc")
   end
 
   # Include default devise modules. Others available are:

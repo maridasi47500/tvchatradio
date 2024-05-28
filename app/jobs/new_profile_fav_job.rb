@@ -3,7 +3,7 @@ class NewProfileFavJob < ApplicationJob
 
   def perform(user1,user2,ilike)
     # Do something later
-    ActionCable.server.broadcast("profile_#{user1}_#{user2}", {ilike: ilike})
+    ActionCable.server.broadcast("profile_#{user1}_#{user2}", {ilike: ilike,user2:user2})
   end
 
 end

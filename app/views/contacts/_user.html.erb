@@ -1,5 +1,5 @@
-<div class="room">
-  <%someuser= room.user1_id == current_user.try(:id) ? room.user2 : room.user1%>
+
+  <div class="room" id="seeprofilelike<%=user.id%>">
 
       <div class="profilepic">
           <span class="connecte"></span>
@@ -16,17 +16,17 @@
     <span>
         
 
-          &#9993;
+          
 
 
     </span>
-    Lire
+    voir
 
 
   </a>
-  <a class="chatter" href="/delete/tchatche/<%=user.id%>">
+  <a class="chatter" href="/tchatche/idontlike" onclick="$.ajax({data:{user1:<%=current_user.id%>,user2:<%=user.id%>},type:'post',url:'/tchatche/idontlike'});return false;">
     <span>
-      &#128465;
+      &#128148;
 
     </span>
     supprimer

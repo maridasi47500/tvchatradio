@@ -95,7 +95,7 @@
                                       </span>
                                       /
                                   <span>
-                                    <%=@users.page(params[:page]).per(10).size%>
+                                    <%=@users.page(params[:page]).per(10).total_pages%>
                                       </span>
                                 </div>
                                   <%= link_to_next_page @users.page(params[:page]).per(10), '&#9654;'.html_safe %>
