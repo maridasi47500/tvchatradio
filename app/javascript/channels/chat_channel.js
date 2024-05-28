@@ -6,7 +6,7 @@ consumer.subscriptions.create({ channel: "ChatChannel", room: "Best Room" })
 consumer.subscriptions.create({ channel: "ChatChannel", room: "1st Room" })
 consumer.subscriptions.create({ channel: "ChatChannel", room: "2nd Room" })
 
-
+if (document.querySelector("[data-room-id]")){
 consumer.subscriptions.create({ channel: "ChatChannel", room: document.querySelector("[data-room-id]").dataset.roomId }, {
 	  received(data) {
 		      this.appendLine(data)
@@ -38,3 +38,4 @@ consumer.subscriptions.create({ channel: "ChatChannel", room: document.querySele
 		  }
 		    }
 })
+}

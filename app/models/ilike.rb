@@ -1,0 +1,2 @@
+class Ilike < ApplicationRecord
+end

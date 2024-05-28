@@ -1,0 +1,2 @@
+$(".myusers").html("<%= escape_javascript render(partial: "search/user", collection: @users, as: :user) %>"); 
+$("#mapagination").html("<%= escape_javascript(link_to_prev_page @users, '&#9664;'.html_safe) %><div><span><%=params[:page].to_i%></span>/<span><%=@users.per(1).size%></span></div><%= escape_javascript(link_to_next_page @users, '&#9654;'.html_safe) %>");

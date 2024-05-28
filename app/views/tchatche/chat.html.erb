@@ -35,11 +35,9 @@
 </div>
 <div id="tchatcheid" hidden><%=user.id%></div>
 <div class="messages" data-room-id="<%=@room.id%>">
-  <div class="talk-bubble tri-right myborder btm-right-in">
-      <div class="talktext">
-            <p>Now flipped the other way and square. Uses .border and .btm-right-in</p>
-              </div>
-  </div>
+  <%@room.posts.each do |x|%>
+    <%=render "tchatche/bubble#{x.user_id == current_user.try(:id) ? "current" : "other"}user", post: x%>
+<%end%>
 </div>
 <form id="formsendmsg">
                 <div class="field">

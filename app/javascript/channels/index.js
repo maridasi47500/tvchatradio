@@ -2,3 +2,4 @@
 import "channels/chat_channel"
 import "channels/appearance_channel"
 import "channels/posts_channel"
+import "channels/profile_channel"

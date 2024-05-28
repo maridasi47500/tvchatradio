@@ -10,13 +10,18 @@ Rails.application.routes.draw do
   get 'settings/account'
   get 'conversations/index'
   get 'localize/index'
+
   get 'profile/tchatche/:id', to: "tchatche#chat"
   post 'tchatche/message', to: "tchatche#message"
+  post 'tchatche/show', to: "tchatche#show"
+  post 'tchatche/ilike', to: "tchatche#ilike"
+  post 'tchatche/idontlike', to: "tchatche#idontlike"
   mount ActionCable.server => "/websocket" 
 
   get 'tchatche/chat'
   resources :posts
   get 'tchatche/:id', to: 'tchatche#profile'
+  get 'delete/tchatche/:id', to: 'tchatche#delete'
   get 'search/index'
   get 'welcome/index'
   devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions' }

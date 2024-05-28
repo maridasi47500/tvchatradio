@@ -1,7 +1,8 @@
 <h1 class="profile">&#129321;Profile</h1>
+<div hidden id="tchatcheid"><%=user.id%></div>
           <h4 class="nom"><%=user.nickname%></h4>
-          <span class="profile heart">&#129293;</span>
-          <span class="profile brokenheart">&#128148;</span>
+          <span class="profile heart" onclick="$.ajax({data:{user1:<%=current_user.id%>,user2:<%=user.id%>},type:'post',url:'/tchatche/ilike'});return false;">&#129293;</span>
+          <span class="profile brokenheart" onclick="$.ajax({data:{user1:<%=current_user.id%>,user2:<%=user.id%>},type:'post',url:'/tchatche/idontlike'});return false;">&#128148;</span>
           <span class="position">&#8982;</span>
           <span class="abuse">&#9888;</span>
           <p>
@@ -35,7 +36,7 @@
                 <p><b>my lucky numbers are:</b></p>
                 
                 <div class="field">
-                  <select id="">
+                  <select id="msgperso">
                     <option value="">ecrire 1 mesg personel</option>
                     <%["beau profile","jolie photo","on peut tchatter?"].each do |msg|%>
                       <option value="<%=msg%>"><%=msg%></option>

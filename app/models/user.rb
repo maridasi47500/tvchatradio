@@ -1,4 +1,12 @@
 class User < ApplicationRecord
+  paginates_per 10
+  def online?
+      updated_at > 10.minutes.ago
+  end
+  def self.onlineusers
+    select("users.*, cast(users.updated_at > #{10.minutes.ago.strftime("%Y-%M-%d %H:%m:%S")} as integer) sometime").order("sometime desc")
+  end
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

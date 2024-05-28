@@ -85,6 +85,21 @@
                       <%= render partial: "search/user", collection: @users, as: :user %>
                           </div>
                               <div class="button">
+                                <div class="mapagination">
+                                  <%if params[:page]%>
+                                  <%= link_to_prev_page @users.page(params[:page]).per(10), '&#9664;'.html_safe %>
+                                  <%end%>
+                                  <div>
+                                  <span>
+                                    <%=params[:page].to_i%>
+                                      </span>
+                                      /
+                                  <span>
+                                    <%=@users.page(params[:page]).per(10).size%>
+                                      </span>
+                                </div>
+                                  <%= link_to_next_page @users.page(params[:page]).per(10), '&#9654;'.html_safe %>
+                                  </div>
                                     <div class="nbusers">
                                             O
                                                 </div>

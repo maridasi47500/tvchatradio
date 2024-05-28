@@ -1,2 +1,6 @@
-<h1>Mes Conversations</h1>
+<h1>&#128488; Conversations </h1>
+<%if @rooms.length > 0%>
 <%= render partial: "conversations/room", collection: @rooms, as: :room %>
+<%else%>
+  <p>0 conversations pour le moment</P>
+<%end%>
