@@ -1,0 +1,16 @@
+class Search < ApplicationRecord
+  attr_accessor "iam"
+  attr_accessor "isearchman"
+  attr_accessor "isearchwoman"
+  attr_accessor "showweightsize"
+  attr_accessor "image"
+  attr_accessor "description"
+  attr_accessor "size"
+  attr_accessor "country"
+  attr_accessor "region_id"
+  attr_accessor "weight"
+  attr_accessor "birthdate"
+  attr_accessor "phone"
+  attr_accessor "nickname"
+  attr_accessor "region"
+end

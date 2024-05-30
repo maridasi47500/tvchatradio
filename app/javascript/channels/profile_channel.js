@@ -6,7 +6,7 @@ import consumer from "channels/consumer"
 //.consumer.subscriptions.create({ channel: "ProfileChannel", user1: "poiuyt",user2:"azerty" })
 //.consumer.subscriptions.create({ channel: "ProfileChannel",user1:"qa",user2:"hh" })
 
-
+if (document.querySelector("#tchatcheid")){
 consumer.subscriptions.create({ channel: "ProfileChannel", user1: document.querySelector("#myuserid").innerHTML,user2: document.querySelector("#tchatcheid").innerHTML }, {
 	  received(data) {
 		  console.log("LOL");
@@ -36,3 +36,4 @@ consumer.subscriptions.create({ channel: "ProfileChannel", user1: document.query
 		  }
 		    }
 })
+}
