@@ -31,7 +31,7 @@ class User < ApplicationRecord
   end
   def self.profilealbum(x)
     if x
-      where("(select count(q.id) from photopublic q where q.user_id = users.id) > 0 or (select count(p.id) from photoprive p where p.user_id = users.id) > 0")
+      where("(select count(q.id) from photopublics q where q.user_id = users.id) > 0 or (select count(p.id) from photoprives p where p.user_id = users.id) > 0")
     else
       select("users.*")
     end
@@ -50,7 +50,7 @@ class User < ApplicationRecord
     
   end
   def self.monage(min,max)
-    where("Cast ((JulianDay('#{Date.today}') - JulianDay(users.birthdate)) as integer) / #{365 } > #{min} and Cast ((JulianDay('#{Date.today}') - JulianDay(users.birthdate))  as integer) / #{365 } < #{max}")
+    where("Cast ((JulianDay('#{Date.today}') - JulianDay(users.birthdate)) as integer) / #{365 } >= #{min} and Cast ((JulianDay('#{Date.today}') - JulianDay(users.birthdate))  as integer) / #{365 } <= #{max}")
   end
   def self.monage1(min,max)
     select("users.*, Cast ((JulianDay('#{Date.today}') - JulianDay(users.birthdate)) as integer) / #{365 } as somemin, Cast ((JulianDay(#{Date.today}) - JulianDay(users.birthdate))  as integer) / #{365 } as somemax")
