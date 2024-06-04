@@ -1,16 +1,6 @@
-class Search
-  include ActiveModel::Model
-    include ActiveModel::Attributes
+class Mysearch < ApplicationRecord
+  self.abstract_class = true
   attr_accessor "iam"
-  attr_accessor "min"
-  attr_accessor "min1"
-  attr_accessor "max"
-  attr_accessor "max1"
-  attr_accessor "profilestuff"
-  attr_accessor "pays"
-  attr_accessor "typeami"
-  attr_accessor "typefun"
-  attr_accessor "typeserieux"
   attr_accessor "isearchman"
   attr_accessor "isearchwoman"
   attr_accessor "showweightsize"

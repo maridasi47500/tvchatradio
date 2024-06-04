@@ -1,4 +1,3 @@
-const varName = require("./tchatche.js");
 
 if (window.location.pathname === "/localize/index" && latuser.innerHTML === "" && lonuser.innerHTML === "" && myuserid.innerHTML !== "") {
 if (navigator.geolocation) {

@@ -213,3 +213,6 @@ input[type="submit"] {
 																																																																													        margin: 10px;
 																																																																														    color: white;
 																																																																													    }
+																																																																													    input#search_min,input#search_max {
+																																																																														        width: 54px;
+																																																																														}
