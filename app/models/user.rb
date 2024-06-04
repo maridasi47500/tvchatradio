@@ -5,7 +5,67 @@ class User < ApplicationRecord
   def online?
       updated_at > 10.minutes.ago
   end
-  def self.getallusers
+  def self.getallusers(s)
+    User.all.isearch(s.isearchwoman == "1",s.isearchman == "1").monage(s.min,s.max).profilepic(s.profilepic == "1").profilealbum(s.profilealbum == "1").mynickname(s.nickname).typeserieux(s.typeserieux=="1").typefun(s.typefun == "1").typeami(s.typeami == "1")
+  end
+  def self.typeami(x)
+    if x
+      where("friendship = 1")
+    else
+      select("users.*")
+    end
+  end
+  def self.typefun(x)
+    if x
+      where("fun = 1")
+    else
+      select("users.*")
+    end
+  end
+  def self.typeserieux(x)
+    if x
+      where("serious = 1")
+    else
+      select("users.*")
+    end
+  end
+  def self.profilealbum(x)
+    if x
+      where("(select count(q.id) from photopublic q where q.user_id = users.id) > 0 or (select count(p.id) from photoprive p where p.user_id = users.id) > 0")
+    else
+      select("users.*")
+    end
+    
+  end
+  def self.mynickname(x)
+    where("nickname like '%#{x.to_s.strip}%'")
+    
+  end
+  def self.profilepic(x)
+    if x
+      where("users.image is not null")
+    else
+      select("users.*")
+    end
+    
+  end
+  def self.monage(min,max)
+    where("Cast ((JulianDay('#{Date.today}') - JulianDay(users.birthdate)) as integer) / #{365 } > #{min} and Cast ((JulianDay('#{Date.today}') - JulianDay(users.birthdate))  as integer) / #{365 } < #{max}")
+  end
+  def self.monage1(min,max)
+    select("users.*, Cast ((JulianDay('#{Date.today}') - JulianDay(users.birthdate)) as integer) / #{365 } as somemin, Cast ((JulianDay(#{Date.today}) - JulianDay(users.birthdate))  as integer) / #{365 } as somemax")
+  end
+  def self.isearch(woman,man)
+    if woman and man
+      where("users.iam = 'f' or users.iam = 'm'")
+    elsif woman
+      where("users.iam = 'f'")
+    elsif man
+      where("users.iam = 'm'")
+    else
+      where("users.iam = 'f' or users.iam = 'm'")
+    end
+      
   end
   def self.onlineusers
     select("users.*, cast(users.updated_at > '#{10.minutes.ago.strftime("%Y-%M-%d %H:%m:%S")}' as integer) sometime").group("users.id").order("sometime desc")

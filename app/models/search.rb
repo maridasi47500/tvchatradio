@@ -2,7 +2,7 @@ class Search
   include ActiveModel::Model
     include ActiveModel::Attributes
     def self.allusers
-    User.all
+      User.all.where("iam = ")
   end
   attr_accessor "iam"
   attr_accessor "min"
