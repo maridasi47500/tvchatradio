@@ -5,6 +5,8 @@ class User < ApplicationRecord
   def online?
       updated_at > 10.minutes.ago
   end
+  def self.getallusers
+  end
   def self.onlineusers
     select("users.*, cast(users.updated_at > '#{10.minutes.ago.strftime("%Y-%M-%d %H:%m:%S")}' as integer) sometime").group("users.id").order("sometime desc")
   end

@@ -10,7 +10,7 @@ class SearchController < ApplicationController
     render layout: "sometemplate"
   end
   def search_params
-    params.require(:search).permit(:nickname,:min,:min1,:max,:max1,:profilestuff,:pays,:typeami,:typefun,:typeserieux,:isearchwoman,:isearchman)
+    params.require(:search).permit(:nickname,:min,:min1,:max,:max1,:profilepic,:profilealbum,:pays,:typeami,:typefun,:typeserieux,:isearchwoman,:isearchman)
   rescue
     params.permit("azertyui")
   end

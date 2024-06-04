@@ -30,8 +30,8 @@ var popup = L.popup()
   console.log("Geolocation is not supported by this browser.");
 }
 }else if (window.location.pathname === "/localize/index" && myuserid.innerHTML !== "") {
-    const latitude = parseFloat(latuser.innerHTML);
-    const longitude = parseFloat(lonuser.innerHTML);
+    const latitude = parseFloat(userlat.innerHTML);
+    const longitude = parseFloat(userlon.innerHTML);
     console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
 var map = L.map('map').setView([latitude, longitude], 13);
 L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
@@ -53,6 +53,8 @@ var popup = L.popup()
     .openOn(map);
 	  });
 
+  });
+}
 }
 if (document.getElementById("btnlocation")){
 btnlocation.onclick=function(){

@@ -1,12 +1,16 @@
 class Search
   include ActiveModel::Model
     include ActiveModel::Attributes
+    def self.allusers
+    User.all
+  end
   attr_accessor "iam"
   attr_accessor "min"
   attr_accessor "min1"
   attr_accessor "max"
   attr_accessor "max1"
-  attr_accessor "profilestuff"
+  attr_accessor "profilepic"
+  attr_accessor "profilealbum"
   attr_accessor "pays"
   attr_accessor "typeami"
   attr_accessor "typefun"

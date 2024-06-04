@@ -4,12 +4,5 @@
                                                 </p>
                                                                  <div id="map"></div>
                                                                                   <p>
-                                                                                                   <button type="button" onclick="overlay.style.display='none';" >
-                                                                                                                              c'est pas ma localisation
-                                                                                                                                               </button>
+                                                                                                     <%= button_to "c'est ma localisation", localize_localization_path(lat:1,lon:1), method: :post %>
                                                                                                                       </p>
-                                                                                                                                       <p>
-                                                                                                                                                        <button id="btnlocation" type="button" onclick="overlay.style.display='none';">
-                                                                                                                                                                                   c'est ma localisation
-                                                                                                                                                                                                    </button>
-                                                                                                                                                                                                                     </p>

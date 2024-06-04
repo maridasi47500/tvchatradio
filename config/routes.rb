@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'settings/account'
   get 'conversations/index'
   get 'localize/index'
+  post 'localize/localization'
 
   get 'profile/tchatche/:id', to: "tchatche#chat"
   post 'tchatche/message', to: "tchatche#message"

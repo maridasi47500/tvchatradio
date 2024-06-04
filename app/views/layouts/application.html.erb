@@ -22,8 +22,8 @@
   </head>
 
   <body>
-    <div id="latuser"></div>
-    <div id="lonuser"></div>
+    <div hidden id="latuser"><%=current_user.try(:lat)%></div>
+    <div hidden id="lonuser"><%=current_user.try(:lon)%></div>
     <div id="myuserid" hidden><%=current_user.try(:id)%></div>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
