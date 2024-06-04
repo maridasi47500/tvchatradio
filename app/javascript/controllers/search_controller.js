@@ -21,7 +21,7 @@ rangeInput.forEach((input) => {
 		    });
 });
 rangePrice.forEach((input) => {
-	  input.addEventListener("inpuy", (e) => {
+	  input.addEventListener("input", (e) => {
 		      let minPrice = rangePrice[0].value;
 		      let maxPrice = rangePrice[1].value;
 		      if (maxPrice - minPrice >= rangeMin && maxPrice <= rangeInput[1].max) {

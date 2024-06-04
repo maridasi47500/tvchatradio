@@ -9,7 +9,7 @@
       </div>
       <div class="range">
            <div class="range-slider">
-                  <span class="range-selected"></span>
+             <span class="range-selected" style="<%if params[:search]%>left:<%=params[:search][:min]%>%;right:<%=100-params[:search][:max].to_i%>%;<%end%>"></span>
                      </div>
                         <div class="range-input">
                                <%=f.range_field "min1", id:"",class:"min", min:"0", max:"1000", step:"10"%>

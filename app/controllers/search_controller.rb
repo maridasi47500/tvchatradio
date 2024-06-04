@@ -4,9 +4,9 @@ class SearchController < ApplicationController
     @users = current_user.list_tchatche.page(params[:page])
     @search=Search.new(search_params)
     @search.min||=30
-    @search.min1||=30
+    @search.min1||=300
     @search.max||=70
-    @search.max1||=70
+    @search.max1||=700
     render layout: "sometemplate"
   end
   def search_params
